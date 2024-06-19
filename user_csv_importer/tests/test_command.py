@@ -5,7 +5,7 @@ from django.core.management import call_command
 
 
 @pytest.mark.django_db
-def test_update_data(user_1, user_2, user_3):
+def test_creation_data(user_1, user_2, user_3):
     out = StringIO()
     call_command("update_data", "user_csv_importer/tests/csv_test_alluser_alldata.csv", stdout=out)
     message = ("Opération réalisée avec succès mais n'oubliez pas de lire le fichier de logging. "
@@ -14,7 +14,7 @@ def test_update_data(user_1, user_2, user_3):
 
 
 @pytest.mark.django_db
-def test_update_data(user_1, user_2, user_3, user_data_1):
+def test_two_creations_and_one_update_data(user_1, user_2, user_3, user_data_1):
     out = StringIO()
     call_command("update_data", "user_csv_importer/tests/csv_test_alluser_alldata.csv", stdout=out)
     message = ("Opération réalisée avec succès mais n'oubliez pas de lire le fichier de logging. "
